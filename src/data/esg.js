@@ -4,46 +4,95 @@
  */
 
 export const hero = {
+  eyebrow: 'Nosso compromisso',
   title: 'ESG TEGRAM',
   headline: 'Logística eficiente, desenvolvimento responsável',
   text: 'No TEGRAM, conectamos a produção agrícola aos mercados nacionais e internacionais com foco em segurança, eficiência operacional, proteção ambiental e desenvolvimento das comunidades do entorno.',
+  ctaLabel: 'Conheça nossos compromissos',
   scrollLabel: 'Role para explorar',
   scrollTarget: '#pilares',
 };
 
 export const pillars = {
+  eyebrow: 'Nossa agenda ESG',
   title: 'Três pilares, um mesmo compromisso',
-  linkLabel: 'Conhecer',
+  intro: 'Nossa agenda ESG está organizada em meio ambiente, pessoas e comunidades, e governança: frentes que orientam como operamos no Porto do Itaqui.',
   items: [
-    { id: 'ambiente', label: 'Meio ambiente', headline: 'Operar com responsabilidade e reduzir impactos', highlight: 'Compostagem comunitária' },
-    { id: 'pessoas', label: 'Pessoas e comunidades', headline: 'Desenvolver oportunidades no território', highlight: 'Jovem Tech, em parceria com a FAPEMA' },
-    { id: 'governanca', label: 'Governança', headline: 'Trabalhar com segurança, ética e conformidade', highlight: 'Licença e Sistema de Gestão Integrado' },
+    {
+      id: 'ambiente',
+      label: 'Meio ambiente',
+      headline: 'Operar com responsabilidade e reduzir impactos',
+      description: 'Trabalhamos para reduzir os impactos das operações portuárias, prevenir a poluição e promover o uso responsável dos recursos.',
+      highlight: 'Compostagem comunitária',
+      cta: 'Ver ações ambientais',
+      imageAlt: 'Colheitadeira e trator em lavoura de grãos',
+      imagePosition: '38% 50%',
+    },
+    {
+      id: 'pessoas',
+      label: 'Pessoas e comunidades',
+      headline: 'Desenvolver oportunidades no território',
+      description: 'O desenvolvimento da operação deve contribuir para a formação profissional, a geração de oportunidades e a qualidade de vida nas comunidades próximas ao porto.',
+      highlight: 'Jovem Tech, em parceria com a FAPEMA',
+      cta: 'Conhecer o Jovem Tech',
+      imageAlt: 'Equipe reunida em torno de uma mesa, com guindastes do porto ao fundo',
+      imagePosition: '50% 30%',
+    },
+    {
+      id: 'governanca',
+      label: 'Governança',
+      headline: 'Trabalhar com segurança, ética e conformidade',
+      description: 'Nossa governança é baseada em conformidade, gestão de riscos, segurança, transparência e melhoria contínua.',
+      highlight: 'Licença e Sistema de Gestão Integrado',
+      cta: 'Ver certificações e segurança',
+      imageAlt: 'Vista aérea dos armazéns do terminal',
+      imagePosition: '50% 45%',
+    },
   ],
 };
-
 export const environment = {
   id: 'ambiente',
-  title: 'Meio ambiente',
+  eyebrow: '01 / Meio ambiente',
+  title: 'Eficiência operacional com responsabilidade ambiental.',
   intro: 'Trabalhamos para reduzir os impactos das operações portuárias, prevenir a poluição e promover o uso responsável dos recursos.',
-  topics: [
-    'Licenciamento ambiental',
-    'Monitoramento da qualidade do ar',
-    'Controle de poeira, drenagem e efluentes',
-    'Gestão e destinação de resíduos',
-    'Compostagem comunitária',
-    'Educação ambiental',
-    'Gestão de carbono',
+  groups: [
+    {
+      number: '01',
+      title: 'Gestão e conformidade ambiental',
+      items: [
+        'Licenciamento ambiental e atendimento às condicionantes',
+        'Estruturação da gestão de carbono',
+      ],
+    },
+    {
+      number: '02',
+      title: 'Monitoramento e prevenção',
+      items: [
+        'Monitoramento da qualidade do ar',
+        'Controle de poeira, drenagem, efluentes e prevenção de derramamentos',
+      ],
+    },
+    {
+      number: '03',
+      title: 'Recursos e economia circular',
+      items: [
+        'Gestão e destinação adequada de resíduos',
+        'Compostagem comunitária',
+        'Educação ambiental',
+      ],
+    },
   ],
   editorial: {
+    eyebrow: 'Iniciativa em destaque',
     title: 'Resíduos que retornam à terra',
     text: 'Resíduos orgânicos e grãos deixam de ser descarte e voltam ao solo como composto, em uma parceria que une operação portuária e agricultura familiar.',
+    photoPlaceholder: 'Espaço reservado para fotografia da compostagem comunitária',
     facts: [
       { term: 'Destino', description: 'Pátio de Compostagem Laranjeiras' },
       { term: 'Parceiros', description: 'Associação dos Pequenos Produtores de Laranjeiras, Vale e JC Ambiental' },
     ],
   },
 };
-
 export const people = {
   id: 'pessoas',
   title: 'Pessoas e comunidades',

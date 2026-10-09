@@ -10,13 +10,18 @@ function Hero() {
       aria-labelledby="hero-title"
     >
       <div className={styles.content} data-reveal>
+        <p className={styles.eyebrow}>{hero.eyebrow}</p>
         <h1 id="hero-title" className={styles.title}>{hero.title}</h1>
         <p className={styles.headline}>{hero.headline}</p>
         <p className={styles.text}>{hero.text}</p>
+        <a className={styles.cta} href={hero.scrollTarget}>
+          {hero.ctaLabel}
+          <span className={styles.ctaArrow} aria-hidden="true" />
+        </a>
       </div>
 
-      <a className={styles.scrollCue} href={hero.scrollTarget}>
-        <span className={styles.scrollCueLine} aria-hidden="true" />
+      <a className={styles.scrollCue} href={hero.scrollTarget} aria-hidden="true" tabIndex={-1}>
+        <span className={styles.scrollCueLine} />
         {hero.scrollLabel}
       </a>
     </section>

@@ -1,41 +1,81 @@
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 16px;
+  color: var(--esg-accent);
+  font: 600 13px var(--esg-font-title);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--esg-accent);
+}
+
 .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 32px 0 0;
+  gap: 48px;
+  margin: 56px 0 0;
   padding: 0;
-  border-top: 1px solid var(--esg-line);
   list-style: none;
 }
 
 .pillar {
-  display: block;
-  margin-right: 32px;
-  padding: 36px 32px 36px 0;
-  border-right: 1px solid var(--esg-line);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
 }
 
-.list > li:last-child .pillar {
-  border-right: 0;
+.image {
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 28px;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.pillar:hover .image {
+  opacity: 0.92;
 }
 
 .label {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: var(--esg-accent);
   font-family: var(--esg-font-title);
-  font-size: 15px;
+  font-size: 22px;
   line-height: 1.15;
 }
 
 .headline {
   display: block;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   color: var(--esg-title);
-  font: 700 26px / 1.25 var(--esg-font-title);
+  font: 700 24px / 1.25 var(--esg-font-title);
   transition: 0.3s;
 }
 
+.description {
+  flex: 1;
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
 .highlight {
-  margin: 0 0 6px;
+  align-self: stretch;
+  margin: 0 0 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--esg-line);
+  color: var(--esg-title);
+  font-weight: 600;
 }
 
 .link {
@@ -44,18 +84,22 @@
 }
 
 .pillar:hover .headline {
-  color: var(--esg-accent);
+  color: var(--esg-green);
+}
+
+.pillar:focus-visible {
+  outline: 2px solid var(--esg-accent);
+  outline-offset: 6px;
 }
 
 @media (max-width: 900px) {
   .list {
     grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 40px;
   }
 
-  .pillar {
-    margin: 0;
-    padding: 28px 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--esg-line);
+  .image {
+    aspect-ratio: 16 / 10;
   }
 }
