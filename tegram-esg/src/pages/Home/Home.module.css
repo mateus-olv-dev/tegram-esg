@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400&display=swap');
+.page {
+  min-height: 100vh;
+  background: var(--color-white);
+}
+
+.hero {
+  --hero-image: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 120px;
+  background-image:
+    linear-gradient(rgba(0, 12, 23, 0.18), rgba(0, 12, 23, 0.18)),
+    var(--hero-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  width: min(var(--container-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.content {
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  max-width: 100%;
+  padding: 4rem 0;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
+}
+
+.title {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.line {
+  display: block;
+}
+
+.highlight {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  padding: 0 0.04em 0 0.17em;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -0.04em;
+  right: -0.02em;
+  bottom: 0;
+  height: 0.17em;
+  transform: rotate(-1deg);
+  transform-origin: left center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 24' preserveAspectRatio='none'%3E%3Cpath fill='%23f89c1c' d='M2 14 C40 8 120 6 250 7 C380 8 460 5 498 9 C470 13 400 14 330 15 C220 17 110 18 40 19 C20 20 8 19 2 14Z'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+  text-shadow: none;
+}
+
+.subtitle {
+  margin: 0;
+  margin-top: 0.4em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.36em;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #d2d3d3;
+  text-shadow: none;
+}
+
+.cta {
+  margin-top: 0.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.17em;
+  padding: 0 0.7em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.24em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: #f89c1c;
+  border: 0;
+  border-radius: 3px;
+  text-shadow: none;
+  transition: filter 0.2s ease;
+}
+
+.cta:hover {
+  filter: brightness(1.08);
+}
+
+/* ============ SEÇÃO LOGÍSTICA + NOTÍCIAS ============ */
+.about {
+  --about-width: 904px;
+  position: relative;
+  display: flow-root; /* impede o margin negativo de puxar o fundo branco para cima da hero */
+  background: #fff;
+  padding-bottom: 5rem;
+}
+
+.aboutContainer {
+  width: min(var(--about-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.aboutGrid {
+  position: relative;
+  z-index: 2; /* fica por cima da hero */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 376px;
+  column-gap: 0;
+  align-items: start;
+  margin-top: -96px; /* imagem do navio sobe sobre a hero */
+}
+
+/* ---------- coluna esquerda ---------- */
+.aboutMain {
+  min-width: 0;
+}
+
+.aboutImages {
+  position: relative;
+  width: 100%;
+  max-width: 436px;
+  aspect-ratio: 436 / 339;
+}
+
+.imgShip,
+.imgGrain {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 20px 45px rgba(12, 39, 58, 0.2);
+}
+
+.imgShip {
+  top: 0;
+  left: 0;
+  width: 45.18%;      /* 197 / 436 */
+  aspect-ratio: 197 / 238;
+}
+
+.imgGrain {
+  top: 18.29%;        /* 62 / 339 */
+  left: 47.48%;       /* 207 / 436 */
+  width: 52.52%;      /* 229 / 436 */
+  aspect-ratio: 229 / 277;
+}
+
+.aboutKicker {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #f89c1c;
+}
+
+.aboutTitle {
+  max-width: 440px;
+  margin: 5px 0 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0;
+  color: #00223f;
+}
+
+.aboutParagraph {
+  max-width: 440px;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #5f6973;
+}
+
+/* ---------- card de notícias ---------- */
+.newsCard {
+  margin-top: 50px; /* card começa 50px abaixo da imagem do navio */
+  padding: 31px 40px 54px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 20px 55px rgba(12, 39, 58, 0.1);
+}
+
+.newsKicker {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #406d8a;
+}
+
+.newsHeading {
+  margin: 2px 0 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #406d8a;
+}
+
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.newsItem {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 74px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.newsItem.noThumb {
+  padding-left: 13px; /* itens sem miniatura ficam levemente recuados */
+}
+
+.newsThumb {
+  flex: 0 0 74px;
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.newsBody {
+  max-width: 205px;
+}
+
+.newsMeta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.newsTag {
+  font-weight: 800;
+  color: #f89c1c;
+}
+
+.newsDot {
+  width: 3px;
+  height: 3px;
+  margin: 0 11px;
+  border-radius: 50%;
+  background: #a3a3a3;
+}
+
+.newsTime {
+  color: #7f7f7f;
+}
+
+.newsTitle {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0.02em;
+  color: #646464;
+}
+
+.newsItem:hover .newsTitle {
+  color: #406d8a;
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 960px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    margin-top: -48px;
+  }
+
+  .newsCard {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 600px;
+    padding-top: 90px;
+  }
+
+  .content {
+    padding: 2.5rem 0;
+  }
+
+  .subtitle {
+    font-size: 0.45em;
+  }
+
+  .cta {
+    font-size: 0.3em;
+  }
+
+  .aboutTitle {
+    font-size: 1.75rem;
+  }
+
+  .newsCard {
+    padding: 28px 24px 40px;
+  }
+
+  .newsBody {
+    max-width: none;
+  }
+}

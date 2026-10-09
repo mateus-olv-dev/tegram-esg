@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.indicator {
+  padding-top: 18px;
+  border-top: 2px solid var(--esg-accent);
+}
+
+.value {
+  display: block;
+  color: var(--esg-accent);
+  font: 800 64px / 1 var(--esg-font-title);
+}
+
+.label {
+  display: block;
+  color: var(--esg-green);
+  font: 700 22px / 1.25 var(--esg-font-title);
+}
+
+.detail {
+  display: block;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

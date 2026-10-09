@@ -1,0 +1,91 @@
+.certifications {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--esg-line);
+}
+
+.title {
+  margin: 0 0 16px;
+  color: var(--esg-title);
+  font-family: var(--esg-font-title);
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.text p {
+  margin: 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.certification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 24px;
+  border: 1px solid var(--esg-line);
+  border-top: 4px solid var(--esg-accent);
+  background: var(--color-white);
+  text-align: center;
+}
+
+/* Tamanho único para os três selos, independente da proporção do arquivo */
+.seal {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 18px;
+}
+
+.seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.label {
+  color: var(--esg-green);
+  font: 700 20px / 1.2 var(--esg-font-title);
+}
+
+.description {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .certifications {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .list {
+    gap: 12px;
+  }
+
+  .certification {
+    padding: 20px 8px 18px;
+  }
+
+  .seal {
+    width: 84px;
+    height: 84px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+}

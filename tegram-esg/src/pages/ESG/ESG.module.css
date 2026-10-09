@@ -1,0 +1,15 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-white);
+}
+
+.main {
+  background: var(--esg-bg);
+  color: var(--esg-text);
+  font: 18px / 1.6 var(--esg-font-text);
+}
+
+.main a:focus-visible {
+  outline: 3px solid var(--esg-accent);
+  outline-offset: 3px;
+}

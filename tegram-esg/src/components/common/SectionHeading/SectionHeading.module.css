@@ -1,0 +1,14 @@
+.title {
+  margin: 0 0 20px;
+  color: var(--esg-title);
+  font-family: var(--esg-font-title);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.lead {
+  max-width: 60ch;
+  margin: 0;
+  font-size: 21px;
+}

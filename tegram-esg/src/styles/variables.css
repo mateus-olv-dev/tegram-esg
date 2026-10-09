@@ -1,0 +1,28 @@
+:root {
+  --color-navy: #00223f;
+  --color-navy-rgb: 0, 34, 63;
+  --color-primary: #f5a623;
+  --color-primary-dark: #d98700;
+  --color-white: #ffffff;
+  --color-text: #1c2a34;
+  --color-text-soft: rgba(255, 255, 255, 0.8);
+  --color-surface: #f7f7f5;
+  --color-border: rgba(255, 255, 255, 0.18);
+  --container-width: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.14);
+  --header-height: 86px;
+
+  /* Portal ESG */
+  --esg-bg: #f3f3f3;
+  --esg-accent: #f5841f;
+  --esg-green: #143331;
+  --esg-title: #1b2d3a;
+  --esg-text: #5f6973;
+  --esg-line: #d9dcdf;
+  --esg-font-title: 'Montserrat', system-ui, sans-serif;
+  --esg-font-text: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  --esg-container: 1160px;
+  --esg-gutter: 24px;
+}
