@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom'
-import logoImage from '../../../assets/logo/tegram-logo.png'
+import lightLogo from '../../../assets/logo/tegram-logo.png'
+import darkLogo from '../../../assets/logo/tegram-logo-dark.png'
 import styles from './Logo.module.css'
 
-function Logo({ to = '/' }) {
+function Logo({ to = '/', variant = 'light' }) {
+  const isDark = variant === 'dark'
+
   return (
     <Link to={to} className={styles.logo} aria-label="TEGRAM home">
-      <img src={logoImage} alt="TEGRAM" className={styles.image} />
+      <img
+        src={isDark ? darkLogo : lightLogo}
+        alt="TEGRAM"
+        className={`${styles.image} ${isDark ? '' : styles.light}`}
+      />
     </Link>
   )
 }

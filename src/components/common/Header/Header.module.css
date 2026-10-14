@@ -6,30 +6,107 @@
   width: 100%;
   background: transparent;
   box-shadow: none;
+  
 }
 
 .mainHeader {
+  --nav-color: var(--nav-color);
+  --nav-hover: var(--color-primary);
+  --nav-underline: transparent;
   background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+}
+
+/* Após rolar: fixo no topo com fundo branco; logo e menu na mesma linha. */
+.scrolled {
+  --nav-color: var(--color-text);
+  --nav-hover: var(--color-navy);
+  --nav-underline: var(--color-primary);
+
+  position: fixed;
+  inset: 0 0 auto;
+  height: 84px;
+  border-top: 0;
+  background: var(--color-white);
+  box-shadow: 0 6px 28px rgba(20, 40, 40, 0.11);
+  backdrop-filter: none;
+  animation: header-in 0.16s ease-out;
+}
+
+@keyframes header-in {
+  from {
+    opacity: 0.75;
+    transform: translateY(-9px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container {
   width: min(var(--container-width), calc(100% - 32px));
+  min-height: 84px;
   margin: 0 auto;
-  min-height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
 
-@media (max-width: 980px) {
-  .container {
-    min-height: 80px;
-    padding: 1rem 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.scrolled .container {
+  min-height: 84px;
+}
+
+.brand {
+  flex-shrink: 0;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: none;
+  color: var(--nav-color);
+  cursor: pointer;
+}
+
+.toggle span {
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+}
+
+@media (max-width: 930px) {
+  .mainHeader,
+  .scrolled {
+    height: 72px;
+  }
+
+  .container,
+  .scrolled .container {
+    min-height: 72px;
+    padding: 0;
+  }
+
+  .toggle {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrolled {
+    animation: none;
   }
 }

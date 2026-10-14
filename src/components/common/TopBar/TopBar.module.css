@@ -1,41 +1,74 @@
 .topbar {
   background: rgba(0, 34, 63, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--color-white);
-  font-size: 0.74rem;
+  font-size: 0.7rem; /* ~14px, como na imagem */
+  line-height: 1;
 }
 
 .container {
-  width: min(var(--container-width), calc(100% - 32px));
+  width: 100%;
+  padding: 0 24px;
   margin: 0 auto;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 42px;
   gap: 20px;
 }
 
+/* ---------- Esquerda: contato ---------- */
 .contactGroup {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .contactItem {
-  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.95;
+  white-space: nowrap;
+}
+
+/* Divisor vertical entre os itens */
+.divider {
+  display: block;
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+/* ---------- Direita: links + bandeiras ---------- */
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .utilityNav {
   display: flex;
   align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.utilityEntry {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .utilityLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--color-white);
-  opacity: 0.9;
+  opacity: 0.95;
+  white-space: nowrap;
   transition: opacity 0.2s ease;
 }
 
@@ -43,15 +76,52 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+/* ---------- Bandeiras ---------- */
+.languages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.flagButton {
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  line-height: 0;
+  opacity: 0.95;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.flagButton:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.flag {
+  display: block;
+  width: 22px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 980px) {
   .container {
     flex-direction: column;
     justify-content: center;
-    padding: 8px 0;
+    padding: 10px 16px;
+    gap: 10px;
   }
 
   .contactGroup,
-  .utilityNav {
+  .rightGroup {
     justify-content: center;
+  }
+
+  .contactGroup .divider {
+    display: none;
   }
 }

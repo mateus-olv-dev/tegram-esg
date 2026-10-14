@@ -11,6 +11,17 @@ export const navItems = [
 ]
 
 export const utilityItems = [
-  { label: 'Trabalhe Conosco', href: '#' },
-  { label: 'Intranet', href: '#' },
+  { label: 'Trabalhe Conosco', href: '#', icon: 'users' },
+  { label: 'Intranet', href: '#', icon: 'monitor' },
 ]
+ 
+export const languageItems = [
+  { code: 'zh', flag: 'cn', label: '中文' },
+  { code: 'en', flag: 'us', label: 'English' },
+  { code: 'fr', flag: 'fr', label: 'Français' },
+  { code: 'de', flag: 'de', label: 'Deutsch' },
+  { code: 'pt', flag: 'br', label: 'Português' },
+  { code: 'ru', flag: 'ru', label: 'Русский' },
+  { code: 'es', flag: 'es', label: 'Español' },
+]
+ 

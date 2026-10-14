@@ -4,9 +4,9 @@
  */
 
 export const hero = {
-  eyebrow: 'Nosso compromisso',
+  eyebrow: 'Nosso compromisso ESG',
   title: 'ESG TEGRAM',
-  headline: 'Logística eficiente, desenvolvimento responsável',
+  headline: ['Logística eficiente,', 'desenvolvimento responsável.'],
   text: 'No TEGRAM, conectamos a produção agrícola aos mercados nacionais e internacionais com foco em segurança, eficiência operacional, proteção ambiental e desenvolvimento das comunidades do entorno.',
   ctaLabel: 'Conheça nossos compromissos',
   scrollLabel: 'Role para explorar',

@@ -4,15 +4,19 @@
   align-items: center;
   min-height: 100svh;
   color: var(--color-white);
-  background:
+  background-color: var(--color-navy);
+  background-image:
     linear-gradient(
       90deg,
-      rgba(20, 51, 49, 0.94) 0%,
-      rgba(20, 51, 49, 0.86) 30%,
-      rgba(20, 51, 49, 0.4) 58%,
-      rgba(20, 51, 49, 0.08) 100%
+      rgba(var(--color-navy-rgb), 0.62) 0%,
+      rgba(var(--color-navy-rgb), 0.5) 35%,
+      rgba(var(--color-navy-rgb), 0.18) 55%,
+      rgba(var(--color-navy-rgb), 0) 70%
     ),
-    var(--hero-image) 70% center / cover;
+    var(--hero-image);
+  background-position: 0 0, 72% 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* O Header é sobreposto ao topo da Hero, por isso o espaço extra acima. */
@@ -20,11 +24,11 @@
   width: 100%;
   max-width: var(--esg-container);
   margin: 0 auto;
-  padding: calc(var(--header-height) + 48px) var(--esg-gutter) 96px;
+  padding: calc(var(--header-height) + 24px) var(--esg-gutter) 88px;
 }
 
 .content > * {
-  max-width: min(100%, 600px);
+  max-width: min(100%, 540px);
 }
 
 .eyebrow {
@@ -50,25 +54,34 @@
   margin: 0;
   color: var(--color-white);
   font-family: var(--esg-font-title);
-  font-size: clamp(44px, 7vw, 92px);
+  font-size: clamp(40px, 5.4vw, 80px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
 .headline {
-  margin: 20px 0 22px;
-  color: var(--esg-accent);
+  margin: 24px 0 20px;
+  color: var(--color-white);
   font-family: var(--esg-font-title);
-  font-size: clamp(20px, 2.2vw, 28px);
-  font-weight: 500;
+  font-size: clamp(20px, 2.1vw, 30px);
+  font-weight: 600;
   line-height: 1.25;
+}
+
+.headlineLine {
+  display: block;
+}
+
+.headlineAccent {
+  color: var(--esg-accent);
 }
 
 .text {
   margin: 0;
-  font-size: clamp(17px, 1.4vw, 20px);
-  line-height: 1.6;
+  max-width: 480px;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -76,93 +89,146 @@
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  min-height: 52px;
   margin-top: 36px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--esg-accent);
-  color: var(--color-white);
-  font: 600 15px var(--esg-font-title);
-  transition: gap 0.25s ease;
+  padding: 0 28px;
+  border-radius: var(--radius-sm);
+  background: var(--esg-accent);
+  color: var(--esg-green);
+  font: 700 15px var(--esg-font-title);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cta:hover {
-  gap: 20px;
+  background: #ff983a;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
 }
 
 .cta:focus-visible,
 .scrollCue:focus-visible {
-  outline: 2px solid var(--esg-accent);
-  outline-offset: 6px;
+  outline: 3px solid var(--color-white);
+  outline-offset: 4px;
 }
 
 .ctaArrow {
   position: relative;
-  width: 28px;
-  height: 1px;
-  background: var(--esg-accent);
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.25s ease;
 }
 
 .ctaArrow::after {
   content: '';
   position: absolute;
   right: 0;
-  top: -3px;
-  width: 7px;
-  height: 7px;
-  border-top: 1px solid var(--esg-accent);
-  border-right: 1px solid var(--esg-accent);
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
   transform: rotate(45deg);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(5px);
 }
 
 .scrollCue {
   position: absolute;
-  left: var(--esg-gutter);
+  left: max(var(--esg-gutter), calc((100% - var(--esg-container)) / 2 + var(--esg-gutter)));
   bottom: 28px;
   display: flex;
   align-items: center;
   gap: 12px;
-  font: 600 13px var(--esg-font-title);
+  color: rgba(255, 255, 255, 0.8);
+  font: 500 12px var(--esg-font-title);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.scrollCueLine {
-  width: 2px;
-  height: 48px;
-  background: var(--esg-accent);
-  transform-origin: top;
-  animation: cue 2s ease-in-out infinite;
+.scrollCueArrow {
+  position: relative;
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s ease;
 }
 
-@keyframes cue {
-  50% {
-    transform: scaleY(0.4);
-  }
+.scrollCueArrow::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  bottom: 0;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  transform: rotate(45deg);
+}
+
+.scrollCue:hover .scrollCueArrow {
+  transform: translateY(4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scrollCueLine {
-    animation: none;
+  .cta,
+  .ctaArrow,
+  .scrollCueArrow {
+    transition: none;
   }
 
-  .cta {
-    transition: none;
+  .cta:hover,
+  .cta:hover .ctaArrow,
+  .scrollCue:hover .scrollCueArrow {
+    transform: none;
   }
 }
 
+@media (max-width: 1100px) {
+  .hero {
+    background-position: 0 0, 40% 15%;
+  }
+
+  .content > * {
+    max-width: min(100%, 480px);
+  }
+}
+
+/* Mobile e tablet retrato: foto no topo, conteúdo abaixo sobre degradê. */
 @media (max-width: 900px) {
   .hero {
+    --hero-visual-top: 130px;
+    --hero-visual-height: clamp(380px, 62vw, 540px);
+
     min-height: auto;
-    background:
+    background-image:
       linear-gradient(
         180deg,
-        rgba(20, 51, 49, 0.9) 0%,
-        rgba(20, 51, 49, 0.8) 60%,
-        rgba(20, 51, 49, 0.55) 100%
+        rgba(var(--color-navy-rgb), 1) 0,
+        rgba(var(--color-navy-rgb), 1) calc(var(--hero-visual-top) - 40px),
+        rgba(var(--color-navy-rgb), 0) calc(var(--hero-visual-top) + 60px),
+        rgba(var(--color-navy-rgb), 0) calc(var(--hero-visual-top) + var(--hero-visual-height) * 0.55),
+        rgba(var(--color-navy-rgb), 1) calc(var(--hero-visual-top) + var(--hero-visual-height) * 0.98)
       ),
-      var(--hero-image) 72% center / cover;
+      var(--hero-image);
+    background-position: 0 0, 68% var(--hero-visual-top);
+    background-size: 100% 100%, auto var(--hero-visual-height);
   }
 
   .content {
-    padding-top: calc(var(--header-height) + 56px);
-    padding-bottom: 64px;
+    padding-top: calc(var(--hero-visual-top) + var(--hero-visual-height) - 70px);
+    padding-bottom: 56px;
+  }
+
+  .content > * {
+    max-width: 100%;
+  }
+
+  .headlineLine {
+    display: inline;
   }
 
   .scrollCue {
